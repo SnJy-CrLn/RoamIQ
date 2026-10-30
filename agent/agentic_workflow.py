@@ -3,11 +3,14 @@ from langgraph.graph import START, END, StateGraph, MessagesState
 from utils.model_loader import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT
 
+from tools.weather import Weather
+
 class GraphBuilder():
     def __init__(self):
         self.tools = [
-            #Tools 
+           # tools 
         ]
+        self.weather_tools = Weather().weather_tool_list
         self.system_prompt = SYSTEM_PROMPT
         self.llm = ModelLoader.load_llm()
         self.llm_with_tools = self.llm.bind_tools(tools = self.tools)

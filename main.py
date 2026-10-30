@@ -12,7 +12,7 @@ class QueryRequest(BaseModel):
 async def query_travel_agent(query:QueryRequest):
     try:
         print(query)
-        graph = GraphBuilder(model_provider="groq")
+        graph = GraphBuilder()
         react_app = graph()
 
         png_graph = react_app.get_graph().draw_mermaid_png()
