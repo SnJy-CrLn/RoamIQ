@@ -4,13 +4,16 @@ from utils.model_loader import ModelLoader
 from prompt_library.prompt import SYSTEM_PROMPT
 
 from tools.weather import Weather
+from tools.currency_conversion import CurrencyConvertorTool
+from tools.place_search import PlaceSearchTool
 
 class GraphBuilder():
     def __init__(self):
-        self.tools = [
-           # tools 
-        ]
+        self.tools = []
         self.weather_tools = Weather().weather_tool_list
+        self.currency_convertor_tools = CurrencyConvertorTool().currency_convertor_tool_list
+        self.place_search_tools = PlaceSearchTool().place_search_tool_list
+
         self.system_prompt = SYSTEM_PROMPT
         self.llm = ModelLoader.load_llm()
         self.llm_with_tools = self.llm.bind_tools(tools = self.tools)
