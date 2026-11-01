@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from fastapi import FastAPI
-from agent.agentic_workflow import GraphBuilder
+from agent.agentic_workflow import Agent
 from fastapi.responses import JSONResponse
 import os
 app = FastAPI() 
@@ -12,7 +12,7 @@ class QueryRequest(BaseModel):
 async def query_travel_agent(query:QueryRequest):
     try:
         print(query)
-        graph = GraphBuilder()
+        graph = Agent()
         react_app = graph()
 
         png_graph = react_app.get_graph().draw_mermaid_png()

@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, ConfigDict
-from typing_extensions import Literal, Optional
+from typing_extensions import Literal
 from config_loader import ConfigLoader
 from dotenv import load_dotenv
 import os

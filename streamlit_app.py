@@ -1,7 +1,6 @@
 import streamlit as st
 from datetime import datetime
 import requests
-import sys
 
 BASE_URL = "https://localhost:8000"
 
