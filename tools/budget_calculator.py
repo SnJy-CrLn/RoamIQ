@@ -96,3 +96,5 @@ class BudgetTool():
                 'per_person_budget': total_budget/no_of_people,
                 'per_person_per_day': (total_budget/no_of_people)/no_of_days
             }
+
+        return [plan_trip_budget]

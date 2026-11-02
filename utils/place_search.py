@@ -5,7 +5,7 @@ load_dotenv()
 class PlaceSearcher():
     def __init__(self):
         self.place_search_tool = TavilySearch(
-            max_results = 5,
+            max_results = 2,
             search_depth = 'basic',
             topic = 'general',
             include_answer = True

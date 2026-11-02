@@ -25,10 +25,8 @@ class PlaceSearchTool():
                 location: City or destination.
                 budget:(example: $150 or ₹1000) Preferred accommodation budget per room, per night. Use 0 if no budget is specified by user.
             """
-            if budget > 0:
-                query = f"Best hotels in and around {location} under {budget} per night."
-            else:
-                query = f"Best hotels in and around {location}."
+            
+            query = f"Best hotels in and around {location} under {budget} per night."
             return self.search_api.search_places(query=query)
 
         @tool

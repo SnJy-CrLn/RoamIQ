@@ -24,7 +24,7 @@ class Agent():
         self.tools.extend(self.budget_tool)
         
         self.system_prompt = SYSTEM_PROMPT
-        self.llm = ModelLoader.load_llm()
+        self.llm = ModelLoader().load_llm()
         self.llm_with_tools = self.llm.bind_tools(tools = self.tools)
         
     def agent_function(self,state:MessagesState):
