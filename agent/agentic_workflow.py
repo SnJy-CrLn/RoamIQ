@@ -17,11 +17,14 @@ class Agent():
         self.place_search_tools = PlaceSearchTool().place_search_tool_list
         self.calculator_tool = CalculatorTool().calculator_tool_list
         self.budget_tool = BudgetTool().budget_tool_list
-        self.tools.extend(self.weather_tools)
-        self.tools.extend(self.currency_convertor_tools)
-        self.tools.extend(self.place_search_tools)
-        self.tools.extend(self.calculator_tool)
-        self.tools.extend(self.budget_tool)
+        self.tools.extend([
+            * self.weather_tools,
+            * self.currency_convertor_tools,
+            * self.place_search_tools,
+            * self.calculator_tool,
+            * self.budget_tool,
+        ])
+
         
         self.system_prompt = SYSTEM_PROMPT
         self.llm = ModelLoader().load_llm()
